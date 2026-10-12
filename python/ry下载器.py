@@ -316,7 +316,7 @@ def fetch_with_fallback(url):
                 return raw,ua,u
             except Exception as e:
                 last=e; time.sleep(0.3)
-    print(f"[WARN] all failed: {last}")
+    raise RuntimeError(f"all failed: {last}")
 
 
 # ---------- 链接解析 ----------
